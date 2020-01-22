@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jarhun88/Travels#readme",
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "config": "^3.2.5",
     "express": "^4.17.1",
     "express-validator": "^6.3.1",

@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://jarhun88:KUYCKbbG5FXwzMIN@testcluster-2dwp1.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://jarhun88:KUYCKbbG5FXwzMIN@testcluster-2dwp1.mongodb.net/test?retryWrites=true&w=majority",
+  "googleKey": "AIzaSyCk2WZXMNxFK7eKCdTn-qOm2rPW6bnqQFY"
 }
