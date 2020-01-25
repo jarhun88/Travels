@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from "react";
 import axios from "axios";
+import "../Search.css";
 
 class Search extends Component {
   state = {
@@ -30,26 +31,23 @@ class Search extends Component {
   };
 
   render() {
-    if (!this.state.isLoaded) {
-      return (
+    return (
+      <Fragment>
         <div>
           <h1>Search your destination</h1>
           <button onClick={this.Search}>Button</button>
         </div>
-      );
-    } else {
-      return (
-        <Fragment>
-          <div>
-            {this.state.items.map(item => (
-              <div>
-                <li key={item.id}>Name: {item.name}</li>
-              </div>
-            ))}
-          </div>
-        </Fragment>
-      );
-    }
+        <div class="border">
+          {this.state.items.map(item => (
+            <div class="box">
+              <h3 key={item.id}>Name: {item.name}</h3>
+              <h4>Address: {item.formatted_address}</h4>
+              <h5>Rating: {item.rating}</h5>
+            </div>
+          ))}
+        </div>
+      </Fragment>
+    );
   }
 }
 

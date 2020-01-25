@@ -1,0 +1,11 @@
+.border {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  margin: 20px;
+  width: 50%;
+  height: 10%;
+  outline-style: dotted;
+}
