@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
         response.status(404).json({ msg: "No city found" });
       }
 
-      res.json(JSON.parse(body)["results"]);
+      res.json(body);
     });
   } catch (error) {
     console.error(error.message);

@@ -2,15 +2,12 @@ import React, { Fragment, Component } from "react";
 import axios from "axios";
 
 class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-      isLoaded: false
-    };
-  }
+  state = {
+    items: [],
+    isLoaded: false
+  };
 
-  async componentDidMount() {
+  Search = async () => {
     try {
       const config = {
         headers: {
@@ -18,18 +15,41 @@ class Search extends Component {
         }
       };
       const res = await axios.get("/api/locator", config);
-      console.log(res);
+      const data = JSON.parse(res.data);
+
+      console.log(typeof data.results);
+      this.setState({
+        items: data.results,
+        isLoaded: true
+      });
+      console.log(this.state.items);
+      //   console.log(data);
     } catch (err) {
       console.error(err.message);
     }
-  }
+  };
 
   render() {
-    return (
-      <Fragment>
-        <h1>Search your destination</h1>
-      </Fragment>
-    );
+    if (!this.state.isLoaded) {
+      return (
+        <div>
+          <h1>Search your destination</h1>
+          <button onClick={this.Search}>Button</button>
+        </div>
+      );
+    } else {
+      return (
+        <Fragment>
+          <div>
+            {this.state.items.map(item => (
+              <div>
+                <li key={item.id}>Name: {item.name}</li>
+              </div>
+            ))}
+          </div>
+        </Fragment>
+      );
+    }
   }
 }
 
