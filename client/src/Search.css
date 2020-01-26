@@ -1,11 +1,21 @@
 .border {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .box {
   margin: 20px;
-  width: 50%;
-  height: 10%;
+  padding: 10px;
+  width: 30%;
+  height: 30%;
   outline-style: dotted;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
